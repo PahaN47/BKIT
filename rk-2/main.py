@@ -40,37 +40,3 @@ def task3(computers, microprocessors, cmlinks):
         for cmlink in cmlinks
         ]
     return pairlist
-
-if __name__ == "__main__":
-    computers = [
-        computer("Computer Sergey"),
-        computer("Amazing Computer 3000"),
-        computer("The Box")
-    ]
-
-    microprocessors = [
-        microprocessor("intel core i3", 10000, computers[0].getid()),
-        microprocessor("intel core i5", 15000, computers[1].getid()),
-        microprocessor("intel core i7", 30000, computers[2].getid()),
-        microprocessor("intel xeon", 600000, computers[2].getid())
-    ]
-
-
-    # список для третьего задания. связи в первых двух заданиях отличаются
-    # и никак не связаны с третьим заданием. 
-    # в третьем задании поле id микропроцессора игнорируется
-    cmlinks = [
-        cmlink(computers[0].getid(), microprocessors[0].getid()),
-        cmlink(computers[1].getid(), microprocessors[0].getid()),
-        cmlink(computers[1].getid(), microprocessors[1].getid()),
-        cmlink(computers[2].getid(), microprocessors[0].getid()),
-        cmlink(computers[2].getid(), microprocessors[1].getid()),
-        cmlink(computers[2].getid(), microprocessors[2].getid()),
-        cmlink(computers[2].getid(), microprocessors[3].getid())
-    ]
-    print("TASK 1:")
-    print(task1(computers, microprocessors))
-    print("TASK 2:")
-    print(task2(computers, microprocessors))
-    print("TASK 3:")
-    print(task3(computers, microprocessors, cmlinks))
